@@ -1,0 +1,27 @@
+= render partial: "users/info_user"
+/ main
+/   section.section.has-background-white-bis
+/     .container
+/       .uni-breadcrumb
+/         nav.breadcrumb.has-succeeds-separator.is-small aria-label="breadcrumbs"
+/           ul
+/             li
+/               = link_to root_path
+/                 span.icon.is-small
+/                   i.fas.fa-home aria-hidden="true"
+/   section.section.has-background-white-ter
+/     .container
+/       .columns.is-tablet.is-centered
+/         .column.is-three-fifths.has-background-white.is-centered
+/           h1.title.is-5(style="text-align:center; margin-bottom: 0px;")
+/             | How to step
+/           h1.title.is-4(style="text-align:center;")
+/             | MY UNIVAS - 時登録
+/           p.control(style="margin-left: 1.5rem;")
+/             | ● 大学名、競技名を選択してください
+/             br
+/             | ※ ご自身の大学名、競技名が両方選択肢に無い場合は一時登録できません
+/             hr
+        /   .column.is-three-fifths.has-background-info-light.is-centered(style="margin: auto;")
+        /     = form_for(User.new, url: new_user_path, method: :put, html: {class: [:front_form, "js-disable-after-submit"], novalidate: true}) do |f|
+        /       = render 'info_user', f: f
